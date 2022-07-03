@@ -89,7 +89,7 @@ app.get("/blogHome",function(req,res){
 });  
 
 app.get("/compose",function(req,res){
-  res.sendFile(__dirname+ "/views/compose.html");
+  res.sendFile(__dirname+ "/index.html");
 });
 
 app.post("/compose" ,function(req,res){

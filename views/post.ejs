@@ -1,0 +1,10 @@
+<%- include("partials/header") %> 
+
+<section class="post" id="post">
+    <h1> <%= title  %> </h1>
+    <%- s = content.replace(/(?:\r\n|\r|\n)/g, '<br>') %>
+</section>
+
+
+
+<%- include("partials/footer") %> 

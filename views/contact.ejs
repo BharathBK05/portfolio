@@ -1,0 +1,43 @@
+<%- include("partials/header") %>  
+
+<section class="contact" id="contact">
+
+    <div class="icons-container">
+
+        <div class="icons">
+            <i class="fas fa-envelope"></i>
+            <h3><a href="mailto:kbharath840@gmail.com" target="blank" > Email</a></h3>
+
+        </div>
+
+        <div class="icons">
+            <i class="fab fab fa-linkedin-in"></i>
+            <h3><a href="https://www.linkedin.com/in/bharath-kumar-kalaimani-a03301171/" target="blank" > linkedin</a></h3>
+        </div>
+
+        <div class="icons">
+            <i class="fab fab fa-twitter"></i>
+           <h3><a href="https://twitter.com/kbharath840" target="_blank">Twitter</a></h3> 
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <form action="/contact" method = "post">
+
+            <input type="text" placeholder="name" class="box" name="Name">
+            <input type="email" placeholder="email" class="box" name="Email">
+            <input type="number" placeholder="number" class="box" name="Number">
+
+            <textarea  placeholder="message" id="" cols="30" rows="10" name="Message"></textarea>
+
+            <input type="submit" class="btn" value="Send Message">
+
+        </form>
+    </div>
+
+
+</section>
+
+<%- include("partials/footer") %> 

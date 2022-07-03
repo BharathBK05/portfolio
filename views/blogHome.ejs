@@ -1,0 +1,24 @@
+<%- include("partials/header"); -%>
+
+<section class="blogHome" id="blogHome">
+
+    <div class="title">
+        <%  posts.forEach(function(post){ %>
+                <div class="feature-box col-lg-12">
+
+                    <h1><%=post.title%></h1>
+                    <i class="icon fas fa-blog fa-6x"></i>
+                    <p>    
+                    <%=post.content.substring(0, 300) + " ..."%>
+                    <a href="/posts/<%=post._id%>">Read More</a>
+                    </p>
+                
+                </div>
+
+      
+            <% }) %>
+    </div>
+    
+
+</section>
+<%- include("partials/footer"); -%>

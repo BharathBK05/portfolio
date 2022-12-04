@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 
-mongoose.connect("mongodb+srv://admin-bharath:14362348@cluster0.lisc3.mongodb.net/portfolioDB", {useNewUrlParser : true});
+mongoose.connect("mongodb+srv://{user}:{password}@cluster0.lisc3.mongodb.net/portfolioDB", {useNewUrlParser : true});
 
 const potfolioSchema = {
     name : String,

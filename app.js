@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 
-mongoose.connect("mongodb+srv://<username>:<password>@cluster0.lisc3.mongodb.net/portfolioDB", {useNewUrlParser : true});
+mongoose.connect("mongodb+srv://admin-bharath:14362348@cluster0.lisc3.mongodb.net/portfolioDB", {useNewUrlParser : true});
 
 const potfolioSchema = {
     name : String,
@@ -89,7 +89,7 @@ app.get("/blogHome",function(req,res){
 });  
 
 app.get("/compose",function(req,res){
-  res.sendFile(__dirname+ "/index.html");
+  res.sendFile(__dirname+ "/views/compose.html");
 });
 
 app.post("/compose" ,function(req,res){
@@ -123,6 +123,11 @@ app.get("/posts/:postId", function(req, res){
   });
 
 
-app.listen(3000, function() {
-  console.log("Server started on port 3000");
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+
+app.listen(port, function() {
+  console.log("Server has started successfully");
 });

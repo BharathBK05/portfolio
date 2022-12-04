@@ -90,11 +90,12 @@ section{
 }
 
 .home .image{
-    flex:1 1 30rem;
+    flex:1 1 15rem;
 }
 
 .home .image img{
-    width:80%;
+    width:60%;
+    border-radius: 20%;
 }
 
 .home .content{

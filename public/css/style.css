@@ -91,6 +91,7 @@ section{
 
 .home .image{
     flex:1 1 15rem;
+    text-align: center;
 }
 
 .home .image img{

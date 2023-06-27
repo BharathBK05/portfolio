@@ -168,7 +168,7 @@ section{
 
 .experience .box-container .box{
     position: relative;
-    flex:1 1 33rem;
+    flex:100%;
     border-left: .2rem solid var(--main-color);
     padding-left: 2rem;
     padding-right: 2rem;
@@ -190,6 +190,7 @@ section{
     padding:1.5rem;
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
     border-radius: .5rem;
+    text-align: center;
 }
 
 .experience .box-container .box .content span{

@@ -15,6 +15,18 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 
+mongoose.connect("", {useNewUrlParser : true});
+
+const potfolioSchema = {
+    name : String,
+    email : String,
+    phone : Number,
+    messsage : String
+}
+
+const portfolio = mongoose.model("portfolio", potfolioSchema);
+
+
 app.get("/", function(req,res){
   res.render("home");
 });
@@ -33,23 +45,23 @@ app.get("/contact",function(req,res){
 
 
 app.post("/contact", function(req,res){
-    // const data = (
-    // {
-    //     name : req.body.Name,
-    //     email : req.body.Email,
-    //     phone : req.body.Number,
-    //     messsage : req.body.Message
-    // }
-    // )
+    const data = (
+    {
+        name : req.body.Name,
+        email : req.body.Email,
+        phone : req.body.Number,
+        messsage : req.body.Message
+    }
+    )
 
-    // portfolio.insertMany(data, function(err){
-    //     if(err){
-    //         console.log("error")
-    //     }
-    //     else{
-    //         console.log("Saved Successfully")
-    //     }
-    // })
+    portfolio.insertMany(data, function(err){
+        if(err){
+            console.log("error")
+        }
+        else{
+            console.log("Saved Successfully")
+        }
+    })
 
     res.render("contact");
 
@@ -66,15 +78,14 @@ const Post = mongoose.model("Post", blogSchema);
 
 
 app.get("/blogHome",function(req,res){
-  // Post.find({},function(err,posts)
-  // {
-  //   res.render("blogHome",{
-  //     posts : posts
+  Post.find({},function(err,posts)
+  {
+    res.render("blogHome",{
+      posts : posts
       
-  //   });
+    });
 
-  // });
-  res.render("blogHome");
+  });
   
 });  
 
